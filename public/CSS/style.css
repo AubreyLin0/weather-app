@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 15px;
+}
+
+body .nav img {
+  margin-right: 5px;
+  width: 2.5vw;
+  height: 5vh;
+}
+
+body .nav h2 {
+  color: #1c658c;
+  font-family: "Lobster", cursive;
+  margin: 0;
+}
+
+body .currentWeather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .currentWeather form .searchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+body .currentWeather form .searchBar .form-control {
+  background-color: #fef9ef;
+  border-radius: 2rem;
+}
+
+body .currentWeather form .searchBar .form-control:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .currentWeather form .searchBar .btn {
+  background-color: #ffb319;
+  border: 1px solid #ffb319;
+  font-weight: 800;
+  border-radius: 2rem;
+}
+
+body .currentWeather form .searchBar .btn:hover {
+  background-color: #faaa09;
+}
+
+body .currentWeather form .searchBar .btn i {
+  margin: 0 5px;
+}
+
+body .currentWeather form .title {
+  text-align: center;
+}
+
+body .currentWeather form .title > * {
+  font-weight: 800;
+}
+
+body .currentWeather .title {
+  text-align: center;
+}
+
+body .currentWeather .title h1 {
+  text-transform: uppercase;
+}
+
+body .currentWeather .weatherPost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 20px 50px;
+}
+
+body .currentWeather .weatherPost .sectionLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .currentWeather .weatherPost .sectionLeft .icon {
+  width: 150px;
+  height: 150px;
+  margin: 0 20px;
+}
+
+body .currentWeather .weatherPost .sectionRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: rgba(230, 230, 230, 0.5);
+  border-radius: 1rem;
+}
+
+body .currentWeather .weatherPost .sectionRight .weatherDetails {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+body .currentWeather .forecast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+}
+
+body footer p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #2e4c6d;
+}
+
+body footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body footer .links a {
+  text-decoration: none;
+  color: rgba(236, 236, 236, 0.5);
+  font-size: 0.8rem;
+}
+
+body footer .links a:hover {
+  color: #ececec;
+}
+/*# sourceMappingURL=style.css.map */
