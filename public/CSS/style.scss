@@ -9,17 +9,28 @@
 
 $titleFont: "Lobster", cursive;
 $textFont: "Raleway", sans-serif;
+$btnColor: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+$bgColor: linear-gradient(
+  to top,
+  hsla(41, 96%, 78%, 0.6) 0%,
+  hsla(183, 100%, 91%, 0.35) 100%
+);
+$fade-in: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
 * {
-  padding: 0px;
-  margin: 0px;
   box-sizing: border-box;
   font-family: $textFont;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-  background-image: url(../images/background.png);
+  background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top;
+
   .nav {
     @include flexCenter(start, center, null);
     margin: 10px 15px;
@@ -37,85 +48,189 @@ body {
 
   .currentWeather {
     @include flexCenter(center, center, column);
+    position: relative;
     form {
-      //   @include flexCenter(center, center, row);
+      &.close {
+        display: none;
+      }
+      &.fade-in {
+        animation: $fade-in;
+      }
       .searchBar {
         @include flexCenter(center, center, null);
-        height: 10vh;
-        //   .searchInput {
-        // width: 30%;
+        height: 15vh;
+
         .form-control {
           background-color: #fef9ef;
-          border-radius: 2rem;
+          border-radius: 100px;
+          font-size: 1.2rem;
           &:focus {
             border-color: transparent;
             box-shadow: none;
           }
         }
         .btn {
-          background-color: #ffb319;
-          border: 1px solid #ffb319;
+          background-image: $btnColor;
+          border: none;
+          font-size: 1.2rem;
           font-weight: 800;
-          border-radius: 2rem;
-          &:hover {
-            background-color: rgb(250, 170, 9);
+          border-radius: 100px;
+          &:focus {
+            border-color: transparent;
+            box-shadow: none;
           }
           i {
             margin: 0 5px;
           }
-          // }
         }
       }
-      .title {
-        text-align: center;
-        & > * {
-          font-weight: 800;
+      .suggestionWrapper {
+        position: absolute;
+        background-color: #fef9efe7;
+        width: 220px;
+        border-radius: 0 0 1rem 1rem;
+        top: 65px;
+        margin-left: 7px;
+        padding: 10px;
+        z-index: 1;
+        .suggestions {
+          padding: 5px 0;
+          &:hover {
+            border-bottom: 1px solid #787a91;
+          }
         }
       }
     }
     .title {
       text-align: center;
+      z-index: -1;
+      & > * {
+        font-weight: 800;
+      }
       h1 {
         text-transform: uppercase;
+        &.fade-in {
+          animation: $fade-in;
+        }
+      }
+      h5.fade-in {
+        animation: $fade-in;
+      }
+      .close {
+        display: none;
       }
     }
-    .weatherPost {
-      display: flex;
-      //   height: 30vh;
-      width: 80%;
+    .weatherWrap {
+      @include flexCenter(center, center, row);
+      width: 70%;
+      height: 40vh;
       margin: 20px 50px;
+      background-image: $bgColor;
+      border-radius: 1rem;
+      z-index: -1;
+      &.close {
+        display: none;
+      }
+      &.fade-in {
+        animation: $fade-in;
+      }
       .sectionLeft {
         @include flexCenter(center, center, row);
-        // background-color: rgba(230, 230, 230, 0.5);
-
         padding: 30px;
         flex: 1;
         .icon {
-          width: 150px;
-          height: 150px;
-          margin: 0 20px;
+          width: 120px;
+          height: 120px;
+          margin: 0 35px;
         }
       }
       .sectionRight {
         @include flexCenter(center, center, row);
         flex: 1;
-        background-color: rgba(230, 230, 230, 0.5);
-        border-radius: 1rem;
+        flex-wrap: wrap;
+        width: 400px;
         .weatherDetails {
-          flex-wrap: wrap;
+          @include flexCenter(center, center, column);
           list-style: none;
-          text-align: center;
+          width: 10vw;
+          height: 12vh;
+          padding: 0;
+          margin: 0;
+          font-weight: 700;
+          font-size: 1.2rem;
         }
       }
     }
+    .getForecast {
+      .btn {
+        background-image: $btnColor;
+        border: none;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+        padding: 5px 20px;
+        margin: 20px 0;
+        text-transform: uppercase;
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+        }
+        i {
+          margin-left: 10px;
+        }
+      }
+
+      &.close {
+        display: none !important;
+      }
+      &.fade-in {
+        animation: $fade-in;
+      }
+    }
+
     .forecast {
       @include flexCenter(center, center, row);
+      flex-wrap: wrap;
+      width: 80%;
+      position: relative;
+      .forecastItem {
+        @include flexCenter(center, center, column);
+        width: 15vw;
+        height: 35vh;
+        background-image: $bgColor;
+        margin: 10px;
+        border-radius: 10%;
+        .icon {
+          margin: 8px 0;
+        }
+        h3,
+        h4,
+        h5 {
+          margin: 0;
+        }
+      }
+      .btn-close {
+        position: absolute;
+        top: -20px;
+        right: 130px;
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+        }
+      }
+      .close {
+        display: none !important;
+      }
+
+      &.slide-left {
+        animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
     }
   }
   footer {
     @include flexCenter(center, center, null);
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 10vh;
     p {
@@ -135,8 +250,209 @@ body {
         color: rgba(236, 236, 236, 0.5);
         font-size: 0.8rem;
         &:hover {
-          color: rgb(236, 236, 236);
+          color: #ececec;
         }
+      }
+    }
+  }
+
+  .modal-content {
+    .modal-body {
+      @include flexCenter(center, center, column);
+      img {
+        width: 300px;
+        height: 300px;
+      }
+      p {
+        text-align: center;
+      }
+      button {
+        margin: 10px 0;
+        background-image: $btnColor;
+        border: unset;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-3-24 21:39:33
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(800px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Media Query Section
+
+//Phone size
+@media screen and (max-width: 600px) {
+  body {
+    .nav {
+      img {
+        width: 8vw;
+        height: 4.5vh;
+      }
+    }
+    .currentWeather {
+      form {
+        .searchBar {
+          height: 10vh;
+        }
+        .suggestionWrapper {
+          top: 58px;
+        }
+      }
+      .weatherWrap {
+        @include flexCenter(center, center, column);
+        height: auto;
+        .sectionLeft {
+          @include flexCenter(center, center, column);
+          .content {
+            text-align: center;
+          }
+        }
+        .sectionRight {
+          @include flexCenter(center, center, column);
+          width: 300px;
+          height: 400px;
+          .weatherDetails {
+            width: 20vw;
+          }
+        }
+      }
+      .forecast {
+        width: 90%;
+        .forecastItem {
+          width: 150px;
+          height: 250px;
+          border-radius: 1rem;
+          padding: 0 10px;
+          h5 {
+            text-align: center;
+          }
+        }
+        .btn-close {
+          right: 20px;
+        }
+      }
+      .getForecast {
+        height: 10vh;
+        width: 100%;
+        @include flexCenter(center, center, null);
+      }
+    }
+
+    footer {
+      @include flexCenter(center, center, column);
+      position: static;
+      p {
+        width: 100%;
+        text-align: center;
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 10px 0;
+      }
+      .links {
+        @include flexCenter(center, center, column);
+        margin: 0;
+      }
+    }
+  }
+}
+
+//iPad,PC size
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    .nav {
+      img {
+        width: 5vw;
+        height: 4.5vh;
+      }
+    }
+    .currentWeather {
+      form {
+        .searchBar {
+          height: 10vh;
+        }
+        .suggestionWrapper {
+          top: 58px;
+        }
+      }
+      .weatherWrap {
+        @include flexCenter(center, center, column);
+        height: auto;
+        .sectionLeft {
+          @include flexCenter(center, center, column);
+          .content {
+            text-align: center;
+          }
+        }
+        .sectionRight {
+          width: 500px;
+          height: 400px;
+          .weatherDetails {
+            width: 20vw;
+          }
+        }
+      }
+      .forecast {
+        width: 90%;
+        .forecastItem {
+          width: 150px;
+          height: 250px;
+          border-radius: 1rem;
+          padding: 0 10px;
+          h5 {
+            text-align: center;
+          }
+        }
+        .btn-close {
+          right: 20px;
+        }
+      }
+      .getForecast {
+        height: 10vh;
+        width: 100%;
+        @include flexCenter(center, center, null);
+      }
+    }
+
+    footer {
+      @include flexCenter(center, center, column);
+      position: static;
+      margin-top: 80px;
+      p {
+        width: 100%;
+        text-align: center;
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 10px 0;
+      }
+      .links {
+        @include flexCenter(center, center, column);
+        margin: 0;
       }
     }
   }

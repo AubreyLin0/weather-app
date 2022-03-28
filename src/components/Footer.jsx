@@ -10,10 +10,14 @@ export default function footer () {
           href='https://icons8.com/icon/stcmqEEX9t5g/forecast'
           rel='noreferrer'
         >
-          Forecast icon by Icons8
+          Weather icons by Icons8
         </a>
-        <a href='https://www.freepik.com/vectors/nature'>
-          Background image - Nature vector created by freepik
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://www.freepik.com/vectors/background'
+        >
+          Background vector created by pikisuperstar - www.freepik.com
         </a>
       </div>
     </footer>
