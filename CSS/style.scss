@@ -57,7 +57,7 @@ body {
       }
       .searchBar {
         @include flexCenter(center, end, null);
-        height: 15vh;
+        height: 10vh;
 
         .form-control {
           position: relative;
@@ -312,11 +312,6 @@ body {
       }
     }
     .currentWeather {
-      form {
-        .searchBar {
-          height: 10vh;
-        }
-      }
       .weatherWrap {
         @include flexCenter(center, center, column);
         height: auto;
@@ -387,11 +382,6 @@ body {
       }
     }
     .currentWeather {
-      form {
-        .searchBar {
-          height: 10vh;
-        }
-      }
       .weatherWrap {
         @include flexCenter(center, center, column);
         height: auto;
