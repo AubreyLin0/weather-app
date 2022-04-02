@@ -132,6 +132,7 @@ body .currentWeather form .suggestionWrapper .suggestions:hover {
 body .currentWeather .title {
   text-align: center;
   z-index: -1;
+  margin-top: 20px;
 }
 
 body .currentWeather .title > * {
