@@ -12,7 +12,7 @@ export default function ErrorAlert ({ alert, setAlert }) {
   return (
     <Modal show={alert} onHide={handleClose} centered>
       <Modal.Body>
-        <img src='/images/error.jpg' alt='error' />
+        <img src='images/error.jpg' alt='error' />
         <p>
           Oops, there seems to be an error
           <br />
