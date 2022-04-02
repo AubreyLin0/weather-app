@@ -2,7 +2,7 @@ export default function SectionLeft ({ weather }) {
   return (
     <div className='sectionLeft'>
       <img
-        src={`/images/icons/${weather?.weather[0]?.icon}.png`}
+        src={`images/icons/${weather?.weather[0]?.icon}.png`}
         alt='icon'
         className='icon'
       />
