@@ -77,7 +77,7 @@ body .currentWeather form .searchBar {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  height: 15vh;
+  height: 10vh;
 }
 
 body .currentWeather form .searchBar .form-control {
@@ -503,9 +503,6 @@ body .modal-content .modal-body button {
     width: 8vw;
     height: 4.5vh;
   }
-  body .currentWeather form .searchBar {
-    height: 10vh;
-  }
   body .currentWeather .weatherWrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -636,9 +633,6 @@ body .modal-content .modal-body button {
   body .nav img {
     width: 5vw;
     height: 4.5vh;
-  }
-  body .currentWeather form .searchBar {
-    height: 10vh;
   }
   body .currentWeather .weatherWrap {
     display: -webkit-box;
