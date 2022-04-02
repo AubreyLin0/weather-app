@@ -64,8 +64,9 @@ body {
           background-color: #fef9ef;
           border-radius: 100px;
           font-size: 1.2rem;
+          border: unset;
           &:focus {
-            border-color: transparent;
+            border: unset;
             box-shadow: none;
           }
         }
