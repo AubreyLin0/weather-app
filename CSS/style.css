@@ -1,0 +1,763 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+body .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 15px;
+}
+
+body .nav img {
+  margin-right: 5px;
+  width: 2.5vw;
+  height: 5vh;
+}
+
+body .nav h2 {
+  color: #1c658c;
+  font-family: "Lobster", cursive;
+  margin: 0;
+}
+
+body .currentWeather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+body .currentWeather form.close {
+  display: none;
+}
+
+body .currentWeather form.fade-in {
+  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+body .currentWeather form .searchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+}
+
+body .currentWeather form .searchBar .form-control {
+  background-color: #fef9ef;
+  border-radius: 100px;
+  font-size: 1.2rem;
+}
+
+body .currentWeather form .searchBar .form-control:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .currentWeather form .searchBar .btn {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9890e3), to(#b1f4cf));
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 100px;
+}
+
+body .currentWeather form .searchBar .btn:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .currentWeather form .searchBar .btn i {
+  margin: 0 5px;
+}
+
+body .currentWeather form .suggestionWrapper {
+  position: absolute;
+  background-color: #fef9efe7;
+  width: 220px;
+  border-radius: 0 0 1rem 1rem;
+  top: 65px;
+  margin-left: 7px;
+  padding: 10px;
+  z-index: 1;
+}
+
+body .currentWeather form .suggestionWrapper .suggestions {
+  padding: 5px 0;
+}
+
+body .currentWeather form .suggestionWrapper .suggestions:hover {
+  border-bottom: 1px solid #787a91;
+}
+
+body .currentWeather .title {
+  text-align: center;
+  z-index: -1;
+}
+
+body .currentWeather .title > * {
+  font-weight: 800;
+}
+
+body .currentWeather .title h1 {
+  text-transform: uppercase;
+}
+
+body .currentWeather .title h1.fade-in {
+  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+body .currentWeather .title h5.fade-in {
+  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+body .currentWeather .title .close {
+  display: none;
+}
+
+body .currentWeather .weatherWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  height: 40vh;
+  margin: 20px 50px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 219, 145, 0.6)), to(rgba(209, 253, 255, 0.35)));
+  background-image: linear-gradient(to top, rgba(253, 219, 145, 0.6) 0%, rgba(209, 253, 255, 0.35) 100%);
+  border-radius: 1rem;
+  z-index: -1;
+}
+
+body .currentWeather .weatherWrap.close {
+  display: none;
+}
+
+body .currentWeather .weatherWrap.fade-in {
+  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+body .currentWeather .weatherWrap .sectionLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .currentWeather .weatherWrap .sectionLeft .icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 35px;
+}
+
+body .currentWeather .weatherWrap .sectionRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 400px;
+}
+
+body .currentWeather .weatherWrap .sectionRight .weatherDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  width: 10vw;
+  height: 12vh;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+body .currentWeather .getForecast .btn {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9890e3), to(#b1f4cf));
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+body .currentWeather .getForecast .btn:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .currentWeather .getForecast .btn i {
+  margin-left: 10px;
+}
+
+body .currentWeather .getForecast.close {
+  display: none !important;
+}
+
+body .currentWeather .getForecast.fade-in {
+  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+body .currentWeather .forecast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 80%;
+  position: relative;
+}
+
+body .currentWeather .forecast .forecastItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15vw;
+  height: 35vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 219, 145, 0.6)), to(rgba(209, 253, 255, 0.35)));
+  background-image: linear-gradient(to top, rgba(253, 219, 145, 0.6) 0%, rgba(209, 253, 255, 0.35) 100%);
+  margin: 10px;
+  border-radius: 10%;
+}
+
+body .currentWeather .forecast .forecastItem .icon {
+  margin: 8px 0;
+}
+
+body .currentWeather .forecast .forecastItem h3,
+body .currentWeather .forecast .forecastItem h4,
+body .currentWeather .forecast .forecastItem h5 {
+  margin: 0;
+}
+
+body .currentWeather .forecast .btn-close {
+  position: absolute;
+  top: -20px;
+  right: 130px;
+}
+
+body .currentWeather .forecast .btn-close:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .currentWeather .forecast .close {
+  display: none !important;
+}
+
+body .currentWeather .forecast.slide-left {
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  margin: 10px 0;
+}
+
+body footer p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #2e4c6d;
+}
+
+body footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body footer .links a {
+  text-decoration: none;
+  color: rgba(236, 236, 236, 0.5);
+  font-size: 0.8rem;
+}
+
+body footer .links a:hover {
+  color: #ececec;
+}
+
+body .modal-content .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .modal-content .modal-body img {
+  width: 300px;
+  height: 300px;
+}
+
+body .modal-content .modal-body p {
+  text-align: center;
+}
+
+body .modal-content .modal-body button {
+  margin: 10px 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9890e3), to(#b1f4cf));
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  border: unset;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-3-24 21:39:33
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(800px);
+            transform: translateX(800px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(800px);
+            transform: translateX(800px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body .nav img {
+    width: 8vw;
+    height: 4.5vh;
+  }
+  body .currentWeather form .searchBar {
+    height: 10vh;
+  }
+  body .currentWeather form .suggestionWrapper {
+    top: 58px;
+  }
+  body .currentWeather .weatherWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  body .currentWeather .weatherWrap .sectionLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .currentWeather .weatherWrap .sectionLeft .content {
+    text-align: center;
+  }
+  body .currentWeather .weatherWrap .sectionRight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 300px;
+    height: 400px;
+  }
+  body .currentWeather .weatherWrap .sectionRight .weatherDetails {
+    width: 20vw;
+  }
+  body .currentWeather .forecast {
+    width: 90%;
+  }
+  body .currentWeather .forecast .forecastItem {
+    width: 150px;
+    height: 250px;
+    border-radius: 1rem;
+    padding: 0 10px;
+  }
+  body .currentWeather .forecast .forecastItem h5 {
+    text-align: center;
+  }
+  body .currentWeather .forecast .btn-close {
+    right: 20px;
+  }
+  body .currentWeather .getForecast {
+    height: 10vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: static;
+  }
+  body footer p {
+    width: 100%;
+    text-align: center;
+    position: static;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    margin: 10px 0;
+  }
+  body footer .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body .nav img {
+    width: 5vw;
+    height: 4.5vh;
+  }
+  body .currentWeather form .searchBar {
+    height: 10vh;
+  }
+  body .currentWeather form .suggestionWrapper {
+    top: 58px;
+  }
+  body .currentWeather .weatherWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  body .currentWeather .weatherWrap .sectionLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .currentWeather .weatherWrap .sectionLeft .content {
+    text-align: center;
+  }
+  body .currentWeather .weatherWrap .sectionRight {
+    width: 500px;
+    height: 400px;
+  }
+  body .currentWeather .weatherWrap .sectionRight .weatherDetails {
+    width: 20vw;
+  }
+  body .currentWeather .forecast {
+    width: 90%;
+  }
+  body .currentWeather .forecast .forecastItem {
+    width: 150px;
+    height: 250px;
+    border-radius: 1rem;
+    padding: 0 10px;
+  }
+  body .currentWeather .forecast .forecastItem h5 {
+    text-align: center;
+  }
+  body .currentWeather .forecast .btn-close {
+    right: 20px;
+  }
+  body .currentWeather .getForecast {
+    height: 10vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: static;
+    margin-top: 80px;
+  }
+  body footer p {
+    width: 100%;
+    text-align: center;
+    position: static;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    margin: 10px 0;
+  }
+  body footer .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
