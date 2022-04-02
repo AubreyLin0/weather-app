@@ -1,6 +1,7 @@
 import WeatherDetails from './WeatherDetails'
 
 export default function SectionRight ({ weather }) {
+  // it's UTC time, so need to transfer to readable time
   const sunrise = new Date(weather?.sys.sunrise * 1000)
     .toString()
     .substring(16, 24)
@@ -8,6 +9,7 @@ export default function SectionRight ({ weather }) {
     .toString()
     .substring(16, 24)
   return (
+    // get weather information from weather object
     <div className='sectionRight'>
       <WeatherDetails info={`${weather?.main?.temp_max}°C`} title={'Max'} />
 

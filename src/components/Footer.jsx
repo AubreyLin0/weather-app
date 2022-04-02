@@ -17,7 +17,14 @@ export default function footer () {
           rel='noreferrer'
           href='https://www.freepik.com/vectors/background'
         >
-          Background vector created by pikisuperstar - www.freepik.com
+          Background vector created by pikisuperstar
+        </a>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://www.freepik.com/vectors/computer'
+        >
+          Computer vector created by storyset
         </a>
       </div>
     </footer>

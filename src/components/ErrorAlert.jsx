@@ -3,7 +3,9 @@ import { Modal, Button } from 'react-bootstrap'
 
 export default function ErrorAlert ({ alert, setAlert }) {
   const handleClose = () => {
+    // when get API error, the Alert window will show up
     setAlert(false)
+    // after clicked the confirm button, the page will reload
     window.location.reload(false)
   }
 
